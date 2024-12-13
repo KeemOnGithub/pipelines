@@ -19,9 +19,9 @@ class Pipeline:
         self.basic_rag_pipeline = None
 
     async def on_startup(self):
-        from haystack.components.retrievers.in_memory import InMemoryBM25Retriever
+        from haystack.components.retrievers import InMemoryBM25Retriever
         from haystack.components.builders import PromptBuilder
-        from haystack.components.generators import OllamaGenerator
+        from haystack_integrations.components.generators.ollama import OllamaGenerator
 
         from haystack.document_stores.in_memory import InMemoryDocumentStore
 
